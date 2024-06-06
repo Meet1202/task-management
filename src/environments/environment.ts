@@ -1,3 +1,3 @@
 export const environment = {
-    API_URL: 'http://localhost:8055/items/task'
+    API_URL: 'https://directus-demo.preview.im/items/task'
 };

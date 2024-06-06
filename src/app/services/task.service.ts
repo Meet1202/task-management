@@ -38,4 +38,8 @@ export class TaskService {
     yesterday.setDate(today.getDate() - 1);
     return dueDateObj < yesterday;
   }
+
+  errorHandler(err: any) {
+    return err.error.errors[0].message;
+  }
 }

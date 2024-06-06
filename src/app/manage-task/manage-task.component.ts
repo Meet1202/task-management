@@ -64,8 +64,13 @@ export class ManageTaskComponent implements OnInit {
             duration: 2000,
           });
           this.router.navigate(['/']);
+        },
+        error: (err) => {
+          this._snackBar.open(this.__TaskService.errorHandler(err));
         }
       })
+    } else {
+      this._snackBar.open('Please all required fields.');
     }
   }
 
@@ -78,8 +83,13 @@ export class ManageTaskComponent implements OnInit {
             duration: 2000,
           });
           this.router.navigate(['/']);
+        },
+        error: (err) => {
+          this._snackBar.open(this.__TaskService.errorHandler(err));
         }
       })
+    } else {
+      this._snackBar.open('Please all required fields.');
     }
 
   }

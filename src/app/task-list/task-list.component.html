@@ -46,7 +46,7 @@
 
   <div class="table-layout" *ngIf="!isTaskLoading">
       <mat-form-field class="search" appearance="outline">
-  <input matInput type="text" placeholder="search task....." [formControl]="searchControl" #input>
+  <input matInput type="text" placeholder="Search task....." [formControl]="searchControl" #input>
 </mat-form-field>
       
     <table mat-table [dataSource]="taskList" matSort (matSortChange)="announceSortChange()">
@@ -103,7 +103,7 @@
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
     <div class="flex justify-center bg-white" *ngIf="taskList.length < 1">
-      <p class="modal-container">No data found {{taskList.length}}</p>
+      <p class="modal-container">No data found</p>
     </div>
   </div>
 </div>
