@@ -13,7 +13,7 @@ export class ManageTaskComponent implements OnInit {
 
   formGroup: FormGroup;
 
-  allStatus = ['todo', 'inprogress', 'completed'];
+  allStatus = ['todo', 'in_progress', 'completed'];
   minDate = new Date();
   taskData: any = {}
   taskId: number = 0;
@@ -66,11 +66,15 @@ export class ManageTaskComponent implements OnInit {
           this.router.navigate(['/']);
         },
         error: (err) => {
-          this._snackBar.open(this.__TaskService.errorHandler(err));
+          this._snackBar.open(this.__TaskService.errorHandler(err), '', {
+            duration: 2000,
+          });
         }
       })
     } else {
-      this._snackBar.open('Please all required fields.');
+      this._snackBar.open('Please fill all required fields.', '', {
+        duration: 2000,
+      });
     }
   }
 
@@ -85,11 +89,15 @@ export class ManageTaskComponent implements OnInit {
           this.router.navigate(['/']);
         },
         error: (err) => {
-          this._snackBar.open(this.__TaskService.errorHandler(err));
+          this._snackBar.open(this.__TaskService.errorHandler(err), '', {
+            duration: 2000,
+          });
         }
       })
     } else {
-      this._snackBar.open('Please all required fields.');
+      this._snackBar.open('Please fill all required fields.', '', {
+        duration: 2000,
+      });
     }
 
   }

@@ -40,7 +40,7 @@
                             <mat-form-field appearance="outline">
                                 <mat-select formControlName="status" required>
                                     <mat-option *ngFor="let status of allStatus" [value]="status">
-                                        {{status | titlecase}}
+                                        {{(status | titlecase).replace('_', ' ')}}
                                     </mat-option>
                                 </mat-select>
                                 <mat-error *ngIf="formGroup.get('status')?.hasError('required')">Please choose

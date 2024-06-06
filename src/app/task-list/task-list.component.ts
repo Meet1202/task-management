@@ -20,13 +20,15 @@ export class TaskListComponent implements OnInit {
   public taskList: Array<Task> = [];
   public statusColor: any = {
     todo: 'warning',
-    inprogress: 'primary',
+    in_progress: 'primary',
     completed: 'success'
   };
   public displayedColumns: string[] = ['id', 'title', 'due_date', 'status', 'action'];
   public isTaskLoading = false;
   searchControl = new FormControl();
+  statusControl = new FormControl();
   public sortDirection = 'desc'
+  public allStatus = ['todo', 'in_progress', 'completed'];
 
   constructor(
     private router: Router,
@@ -37,6 +39,12 @@ export class TaskListComponent implements OnInit {
 
   ngOnInit() {
     this.getTasks();
+
+    // This is for to wait 300ms then it do api call, 
+    // and if user had not change text in search then
+    //  it not call api until it change and if user seached 
+    // some text and immediately search another text then previous
+    //  request will cancel and it will search new text
     this.searchControl.valueChanges.pipe(
       debounceTime(300),
       distinctUntilChanged(),

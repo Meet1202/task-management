@@ -31,6 +31,7 @@ export class TaskService {
     return this.http.delete(`${environment.API_URL}/${id}`);
   }
 
+  // This below logic is for to check that date is past date not today's or future date.
   isPastDate(dueDate: any) {
     const dueDateObj = new Date(dueDate);
     const today = new Date();

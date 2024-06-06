@@ -9,6 +9,7 @@
 
 body {
     background-color: var(--smoky-white);
+    margin:30px
 }
 
 .bg-white {
@@ -97,6 +98,10 @@ body {
     margin-right: 10px;
 }
 
+.mt-25 {
+    margin-top: 25px;
+}
+
 .ml-10 {
     margin-left: 10px;
 }
@@ -109,6 +114,9 @@ body {
     .container {
         padding-left: 20px;
         padding-right: 20px;
+    }
+    body{
+        margin:10px
     }
 }
 

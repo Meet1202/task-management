@@ -11,7 +11,7 @@ export class ViewTaskComponent {
 
   public statusColor: any = {
     todo: 'warning',
-    inprogress: 'primary',
+    in_progress: 'primary',
     completed: 'success'
   };
 
