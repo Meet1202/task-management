@@ -1,0 +1,61 @@
+<div class="container flex justify-center">
+    <mat-card class="card">
+        <mat-card-header>
+            <div class="flex justify-between items-center w-full mb-5">
+                <mat-card-title>{{taskId ? 'Edit' : 'Add'}} task</mat-card-title>
+            </div>
+        </mat-card-header>
+        <mat-card-content>
+            <div>
+                <form [formGroup]="formGroup" (ngSubmit)="onSubmit()" class="flex flex-col">
+
+                    <mat-label>Title</mat-label>
+                    <mat-form-field appearance="outline">
+                        <input type="text" matInput placeholder="Title" formControlName="title">
+                        <mat-error *ngIf="formGroup.get('title')?.hasError('required')">Title is required</mat-error>
+                    </mat-form-field>
+
+                    <mat-label>Description</mat-label>
+                    <mat-form-field appearance="outline">
+                        <textarea matInput placeholder="Description" formControlName="description" rows="8"></textarea>
+                        <mat-error *ngIf="formGroup.get('description')?.hasError('required')">Description is
+                            required</mat-error>
+                    </mat-form-field>
+
+                    <div class="flex">
+                        <div class="flex flex-col w-49 mr-9">
+                            <mat-label>Due date</mat-label>
+                            <mat-form-field appearance="outline">
+                                <input matInput [matDatepicker]="picker" [min]="minDate" formControlName="due_date">
+                                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                                <mat-datepicker #picker></mat-datepicker>
+                                <mat-error *ngIf="formGroup.get('due_date')?.hasError('required')">Due date is
+                                    required</mat-error>
+                            </mat-form-field>
+                        </div>
+
+
+                        <div class="flex flex-col w-49">
+                            <mat-label>Status</mat-label>
+                            <mat-form-field appearance="outline">
+                                <mat-select formControlName="status" required>
+                                    <mat-option *ngFor="let status of allStatus" [value]="status">
+                                        {{status | titlecase}}
+                                    </mat-option>
+                                </mat-select>
+                                <mat-error *ngIf="formGroup.get('status')?.hasError('required')">Please choose
+                                    status</mat-error>
+                            </mat-form-field>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-center">
+                        <a mat-raised-button type="button" class="mr-10" routerLink="/">Cancel</a>
+                        <button mat-raised-button type="submit" class="primary">{{taskId ? 'Update' :
+                            'Save'}} task</button>
+                    </div>
+                </form>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>

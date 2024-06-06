@@ -1,0 +1,119 @@
+:root {
+    --primary: rgb(37 99 235);
+    --white: white;
+    --success: rgb(132 204 22);
+    --danger: red;
+    --warning: orange;
+    --smoky-white: #f5f5f5;
+}
+
+body {
+    background-color: var(--smoky-white);
+}
+
+.bg-white {
+    background-color: var(--white);
+}
+
+.task-status {
+    color: var(--white);
+    border-radius: 15px;
+    padding: 5px 10px;
+    font-weight: 600;
+}
+
+.spinner {
+    height: 50px !important;
+    width: 50px !important;
+}
+
+.container {
+    padding-left: 150px;
+    padding-right: 150px;
+}
+
+.modal-container {
+    padding: 15px;
+}
+
+.h-full {
+    height: 100%;
+}
+
+.w-full {
+    width: 100%;
+}
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.justify-end {
+    justify-content: end;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.items-end {
+    align-items: end;
+}
+
+.warning {
+    background-color: var(--warning);
+}
+
+.success {
+    background-color: var(--success);
+}
+
+.primary {
+    background-color: var(--primary) !important;
+    color: var(--white) !important;
+}
+
+.text-danger {
+    color: var(--danger);
+}
+.text-lg{
+    font-size: 18px;
+}
+
+.mr-10 {
+    margin-right: 10px;
+}
+
+.ml-10 {
+    margin-left: 10px;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+@media (max-width: 767px) {
+    .container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+@media (min-width: 768px) {
+    .grid-layout {
+        justify-content: flex-start;
+    }
+}

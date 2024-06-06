@@ -1,0 +1,8 @@
+<div class="modal-container">
+    <div class="flex justify-between items-center">
+        <p>Due Date: <span [class]="{'text-danger': __TaskService.isPastDate(data.due_date)}">{{data.due_date | date}}</span></p>
+        <p class="task-status" [class]="statusColor[data.status]">{{data.status | uppercase}}</p>
+    </div>
+    <h2>{{data.title}}</h2>
+    <p>{{data.description}}</p>
+</div>

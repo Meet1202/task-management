@@ -1,0 +1,55 @@
+table {
+  width: 100%;
+}
+th.mat-sort-header-sorted {
+  color: black;
+}
+
+.card {
+  width: 320px;
+  padding: 10px;
+  margin: 10px;
+}
+
+.search {
+  margin-bottom: -13px;
+}
+
+
+.edit-icon {
+  background-color: rgb(95, 95, 244);
+  color: white;
+  border-radius: 50%;
+  padding: 2px;
+}
+
+.delete-icon {
+  background-color: rgb(231, 99, 99);
+  color: white;
+  border-radius: 50%;
+  padding: 2px;
+}
+
+.grid-layout,
+.table-layout {
+  display: none;
+}
+
+@media (max-width: 767px) {
+    .card {
+  width: 300px;
+}
+}
+
+@media only screen and (max-width: 1023px) {
+  .grid-layout {
+    display: flex;
+  }
+}
+
+@media (min-width: 1024px) {
+  .table-layout {
+    display: block;
+    margin-top: 10px
+  }
+}

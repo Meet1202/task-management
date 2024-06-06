@@ -1,0 +1,7 @@
+<div class="modal-container">
+    <p class="text-lg">{{data.message}}</p>
+    <div class="flex justify-end">
+        <button mat-raised-button class="mr-10" (click)="closeDialog()">{{data.cancelBtnLabel}}</button>
+        <button mat-raised-button color="warn" mat-dialog-close="ok">{{data.okBtnLabel}}</button>
+    </div>
+</div>
